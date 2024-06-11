@@ -5,13 +5,13 @@ st.session_state['loc'] = 'main'
 
 st.title('AI Makeover')
 st.markdown('您的智能穿搭助手')
-with st.expander('点击查看详情',use_container_width=True):
+with st.expander('点击查看详情'):
     st.markdown(
         '''
         AI Makeover是一款基于多模态大模型的智能穿搭工具
         '''
     )
-with st.expander('使用说明',use_container_width=True):
+with st.expander('使用说明'):
     st.markdown(
         '''
         * 在侧边栏点击 **穿搭推荐** ，上传您的自拍照（全身或半身），

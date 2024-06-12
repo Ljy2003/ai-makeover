@@ -1,6 +1,5 @@
 import streamlit as st
 from menu import menu
-import cv2
 import PIL
 from PIL import Image
 from io import BytesIO

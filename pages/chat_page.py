@@ -3,6 +3,7 @@ import PIL
 from PIL import Image
 from io import BytesIO
 
+st.set_page_config(layout='wide')
 st.image('./fig/chat_title.png')
 
 col1,col2 = st.columns(2)

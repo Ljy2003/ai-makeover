@@ -1,18 +1,22 @@
 import streamlit as st
-from menu import menu
 import PIL
 from PIL import Image
 from io import BytesIO
 
-st.session_state['loc'] = 'chat'
-st.markdown('### 请输入您的穿搭需求，并上传您的自拍照，我们将会为您提供智能穿搭推荐')
+st.image('./fig/chat_title.png')
 
 col1,col2 = st.columns(2)
-with col1:
-    st.button('生成穿搭建议',use_container_width=True)
-with col2:
-    st.button('查看推荐潮流单品',use_container_width=True)
+flag = col1.button('输入需求',type='primary',use_container_width=True)
+with open('data/need.txt','r',encoding='utf-8') as f:
+    needs = f.readline()
 
+text = st.text_input('请输入您的穿搭需求',needs)
+if flag:
+    with open('data/need.txt','w',encoding='utf-8') as f:
+        f.write(text)
+    st.markdown('已上传您的穿搭需求')
+if col2.button('一键改造',type='primary',use_container_width=True):
+    pass
 
 file = st.file_uploader('**请上传您的自拍照**',type=['png','jpg','jpeg'])
 if file is not None:
@@ -22,5 +26,5 @@ if file is not None:
     img = Image.open(bytes_stream)
     img.save('./data/images/selfie//selfie.png')
 
-st.chat_input('请输入您的穿搭需求')
-menu()
+if st.button('返回',type='primary',use_container_width=True):
+    st.switch_page('streamlit_app.py')

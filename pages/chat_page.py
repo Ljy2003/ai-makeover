@@ -19,7 +19,7 @@ st.markdown("""
 div.stButton > button:first-child {
     background-color: #CC0000;
     color:#ffffff;
-    font-size:13;
+    font-size: 20px !important;
 }
 div.stButton > button:hover {
 background-color: #FF6666;

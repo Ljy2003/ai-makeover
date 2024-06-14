@@ -19,7 +19,6 @@ st.markdown("""
 div.stButton > button:first-child {
     background-color: #CC0000;
     color:#ffffff;
-    font-size: 20px !important;
 }
 div.stButton > button:hover {
 background-color: #FF6666;
@@ -43,7 +42,7 @@ if st.button('$\leftarrow$'):
 st.image('./fig/chat_title.png')
 
 
-col1,col2 = st.columns(2)
+col1,col2 = st.columns(2,gap='medium')
 with col1:
     if ('file' not in st.session_state.keys()) or st.session_state['file'] is None:
         st.image(np.ones((350,320,3)))

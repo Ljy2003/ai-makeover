@@ -70,18 +70,20 @@ with col1:
         st.session_state['file'] = file
         st.rerun()
     
-with col2:
-    if transform_flag:
-        #穿搭改造的操作
-        if ('file' not in st.session_state.keys()) or st.session_state['file'] is None:
-            my_modal = Modal(title="", key="modal_key", max_width=200)
-            with my_modal.container():
-                st.markdown('请上传您的自拍照')
-        elif ('chat' not in st.session_state) or (len(st.session_state['chat']['answer'])==0):
-            my_modal = Modal(title="", key="modal_key", max_width=200)
-            with my_modal.container():
-                st.markdown('请输入您的需求')
-        else:
-            st.image('./fig/logo.png')
+if transform_flag:
+    #穿搭改造的操作
+    if ('file' not in st.session_state.keys()) or st.session_state['file'] is None:
+        my_modal = Modal(title="", key="modal_key", max_width=200)
+        with my_modal.container():
+            st.markdown('请上传您的自拍照')
+    elif ('chat' not in st.session_state) or (len(st.session_state['chat']['answer'])==0):
+        my_modal = Modal(title="", key="modal_key", max_width=200)
+        with my_modal.container():
+            st.markdown('请输入您的需求')
     else:
+        with col2:
+            st.image('./fig/logo.png')
+else:
+    with col2:
         st.image(np.ones((500,300,3)))
+

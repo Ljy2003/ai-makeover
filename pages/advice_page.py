@@ -2,13 +2,13 @@ import streamlit as st
 import pandas as pd
 
 #修改页面背景
-m = st.markdown("""
-<style>
-.stApp {
-    background-color: #FFFFFF;
-}
-</style>
-""", unsafe_allow_html=True)
+# m = st.markdown("""
+# <style>
+# .stApp {
+#     background-color: #FFFFFF;
+# }
+# </style>
+# """, unsafe_allow_html=True)
 
 
 # 修改按钮格式
